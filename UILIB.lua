@@ -1,10 +1,5 @@
--- This User Interface Library is brought to you by Solaris Software.
--- Credits to whoever made it, i just saw it in pastebin
-loadstring(game:HttpGet("https://raw.githubusercontent.com/fa899/personal-scripts/main/Protect_GUI"))()
-local hui = ((gethui ~= nil and gethui()) or (gethui == nil and game.CoreGui))
 local Solaris = Instance.new("ScreenGui")
-protectGui(Solaris)
-Solaris.Parent = hui -- protected folder from game.DescendantAdded
+Solaris.Parent = game.CoreGui
 Solaris.Name = tostring(math.random())
 Solaris.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
