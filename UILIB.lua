@@ -278,7 +278,7 @@ function SolarisLib:New(Config)
     end) ]]
     local SettingsBtn = MenuBtnPreset:Clone()
     SettingsBtn.Parent = MFrame.TopBar.ButtonHolder.MenuBtn.MenuFrame
-    SettingsBtn.Position = UDim2.new(0, 0, 0, 0)
+    SettingsBtn.Position = UDim2.new(0, 0, 0, 5)
     SettingsBtn.Text = "Settings"
     SettingsBtn.MouseEnter:Connect(function()
         TweenService:Create(SettingsBtn, TweenInfo.new(0.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
@@ -707,8 +707,7 @@ function SolarisLib:New(Config)
         end
 
         local general = Settings:Tab("General")
-        general:ToggleSetting("Show Music On Launch", "Shows the music menu when you load Disguise Hub!", true,
-            "ShowMusicOnLaunch")
+        -- general:ToggleSetting("Show Music On Launch", "Shows the music menu when you load Disguise Hub!", true, "ShowMusicOnLaunch")
         general:BindSetting("Close Bind", "Hides/Shows the main window when pressed.", Enum.KeyCode.RightControl,
             "CloseBind")
 
