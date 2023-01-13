@@ -1,11 +1,29 @@
+--[[
+    Solaris UI Library - By Trill
+
+    Modified by Yxild, Removed Music Player.
+]]
+
+local HUI = (gethui() or hui()) or (game.CoreGui)
+
 local Solaris = Instance.new("ScreenGui")
-Solaris.Parent = game.CoreGui
-Solaris.Name = tostring(math.random())
+
+if (syn and syn.protect_gui) then
+    syn.protect_gui(Solaris)
+end
+
+Solaris.Name = game:GetService("HttpService"):GenerateGUID(false)
+Solaris.Parent = HUI
 Solaris.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 local NotificationHolder = Instance.new("ScreenGui")
+
+if (syn and syn.protect_gui) then
+    syn.protect_gui(NotificationHolder)
+end
+
 NotificationHolder.Name = "notiHolder"
-NotificationHolder.Parent = game.CoreGui
+NotificationHolder.Parent = HUI
 NotificationHolder.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 local UserInputService = game:GetService("UserInputService")
@@ -962,7 +980,7 @@ function SolarisLib:New(Config)
                 Button.Name = text .. "element"
                 Button.ButtonText.Text = text
                 Button.ClipsDescendants = true
-                
+
                 Button.MouseButton1Click:Connect(function()
                     callback()
                     Ripple(Button)
@@ -976,8 +994,9 @@ function SolarisLib:New(Config)
 
                 spawn(function()
                     while wait() do
-                       Button.BackgroundColor3 = Holding and SolarisLib.Themes[SolarisLib.Settings.Theme].ButtonHold or SolarisLib.Themes[SolarisLib.Settings.Theme].Button
-                       Button.ButtonText.TextColor3 = SolarisLib.Themes[SolarisLib.Settings.Theme].TextColor
+                        Button.BackgroundColor3 = Holding and SolarisLib.Themes[SolarisLib.Settings.Theme].ButtonHold or
+                                                      SolarisLib.Themes[SolarisLib.Settings.Theme].Button
+                        Button.ButtonText.TextColor3 = SolarisLib.Themes[SolarisLib.Settings.Theme].TextColor
                     end
                 end)
 
