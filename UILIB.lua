@@ -291,7 +291,7 @@ function SolarisLib:New(Config)
         }):Play()
     end)
 
-    function MusicConstructor()
+    --[[ function MusicConstructor()
         local abuttonhold = false
         local playing = false
         local MarketplaceService = game:GetService("MarketplaceService")
@@ -454,7 +454,7 @@ function SolarisLib:New(Config)
                 MusicFrame.Frame.AddSong.BackgroundColor3 = SolarisLib.Themes[SolarisLib.Settings.Theme].Textbox
             end
         end)
-    end
+    end]]
 
     function SettingsConstructor()
         local Settings, SettingsFrame, TabPreset, ContainerPreset, TogglePreset, BindPreset, DropdownPreset,
