@@ -2,7 +2,9 @@
     Solaris UI Library - By Trill
 
     Modified by Yxild, Removed Music Player.
-]] local Solaris = Instance.new("ScreenGui")
+]] 
+
+local Solaris = Instance.new("ScreenGui")
 
 Solaris.Name = game:GetService("HttpService"):GenerateGUID(false)
 Solaris.Parent = game.CoreGui
@@ -260,7 +262,7 @@ function SolarisLib:New(Config)
     local oldScript = script
 
     local MenuBtnPreset = game:GetObjects("rbxassetid://7037141226")[1]
-    local MusicBtn = MenuBtnPreset:Clone()
+    --[[ local MusicBtn = MenuBtnPreset:Clone()
     MusicBtn.Parent = MFrame.TopBar.ButtonHolder.MenuBtn.MenuFrame
     MusicBtn.Position = UDim2.new(0, 0, 0, 5)
     MusicBtn.Text = "Music"
@@ -273,7 +275,7 @@ function SolarisLib:New(Config)
         TweenService:Create(MusicBtn, TweenInfo.new(0.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
             TextTransparency = 0.4
         }):Play()
-    end)
+    end) ]]
     local SettingsBtn = MenuBtnPreset:Clone()
     SettingsBtn.Parent = MFrame.TopBar.ButtonHolder.MenuBtn.MenuFrame
     SettingsBtn.Position = UDim2.new(0, 0, 0, 25)
@@ -715,7 +717,7 @@ function SolarisLib:New(Config)
             "Default", "Theme")
 
     end
-    MusicConstructor()
+    -- MusicConstructor()
     SettingsConstructor()
 
     local function OpenTabMenu()
